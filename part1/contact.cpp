@@ -69,7 +69,7 @@ void Phone::set_contact(){
     
     //remove dashes and convert to long long
     string clean_num = "";
-    for (size_t i = 0; i < phone_num.length(); i++) {
+    for (int i = 0; i < phone_num.length(); i++) {
         if (phone_num[i] != '-') {
             clean_num += phone_num[i];
         }
