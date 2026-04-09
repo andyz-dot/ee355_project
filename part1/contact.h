@@ -32,7 +32,8 @@ public:
 
 class Phone: public Contact{
 private:
-    long long phone_num; 
+    // TODO: modify dataType! Can int store 10 digit phone-number? 
+	long long phone_num; 
 public:
     Phone(string type, string phone_number);
     void print();

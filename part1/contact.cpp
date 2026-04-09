@@ -64,13 +64,14 @@ void Phone::set_contact(){
 	cout <<"Enter the type of phone number: ";
     getline(cin, type);
 	cout << "Enter the phone number: ";
+    string phone_num;
     getline(cin, phone_num);
     
     //remove dashes and convert to long long
     string clean_num = "";
-    for (int i = 0; i < phone_input.length(); i++) {
-        if (phone_input[i] != '-') {
-            clean_num += phone_input[i];
+    for (size_t i = 0; i < phone_num.length(); i++) {
+        if (phone_num[i] != '-') {
+            clean_num += phone_num[i];
         }
     }
     
