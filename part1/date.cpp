@@ -35,3 +35,7 @@ void Date::print_date() {
         cout << "Invalid Date";
     }
 }
+
+bool Date::operator==(const Date& rhs) const {
+    return month == rhs.month && day == rhs.day && year == rhs.year;
+}

@@ -19,5 +19,7 @@ public:
     void set_date(string date_str);
     //prints the date
     void print_date();
+    //equals operator
+    bool operator==(const Date& rhs) const;
 };
 #endif
