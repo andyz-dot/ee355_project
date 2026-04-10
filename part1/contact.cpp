@@ -27,7 +27,7 @@ void Email::set_contact(){
 string Email::get_contact(string style){
     // Note: We have default argument in declaration and not in definition!
     if (style=="full")
-	    return "(" + type + ") " + email_addr;
+	    return "Email (" + type + ") " + email_addr;
     else 
         return email_addr;
 }
@@ -98,7 +98,7 @@ string Phone::get_contact(string style){
                       phone_str.substr(6, 4);
     
     if (style=="full")
-        return "(" + type + ") " + formatted;
+        return "Phone (" + type + ") " + formatted;
     else
         return formatted;
 }
