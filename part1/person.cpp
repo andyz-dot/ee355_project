@@ -123,10 +123,9 @@ bool Person::operator!=(const Person& rhs){
 
 
 void Person::print_person(){
-	cout << l_name <<", " << f_name << endl << endl;
-	birthdate->print_date();
-    cout << endl << endl;
+	// Already implemented for you! Do not change!
+	cout << l_name <<", " << f_name << endl;
+	birthdate->print_date("Month D, YYYY");
     phone->print();
-    cout << endl;
     email->print();
 }
