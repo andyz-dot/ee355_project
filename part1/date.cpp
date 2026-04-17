@@ -30,9 +30,9 @@ void Date::print_date() {
     };
 
     if (month >= 1 && month <= 12) {
-        cout << month_names[month] << " " << day << ", " << year;
+        cout << month_names[month] << " " << day << ", " << year << endl;
     } else {
-        cout << "Invalid Date";
+        cout << "Invalid Date" << endl;
     }
 }
 
