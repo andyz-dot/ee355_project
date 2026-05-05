@@ -1,3 +1,7 @@
+Andy Zhang 5484885819
+Kenjiro Otake 6045203135
+Jamie Ho 6556717550
+
 # Trojan-Book
 
 EE355 project - a contact manager using a doubly linked list in C++. Phase 2 extends it into a small social network so people can be friends with each other and be searched by more than just name.
