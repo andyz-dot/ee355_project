@@ -1,0 +1,11 @@
+id,first_name,last_name,birthdate,email,phone,college,major,state,zip,interest
+1,Julia Scarlett Elizabeth,Louis-Dreyfus,1/13/1961,something@email.com,3102917482,USC,Theatre,CA,90007,acting comedy politics
+2,Martin,Van Nostrand,7/24/1949,myemail@yahoo.com,2244325809,UCLA,Engineering,CA,90024,engineering music hiking
+3,Truman,Burbank,1/17/1962,document@info.edu,2135179989,USC,Theatre,CA,90007,acting media comedy
+4,Amy,Chang,4/12/2001,amy@gmail.com,3105551234,USC,Computer Science,CA,90007,ai music coding
+5,Nayana,Gupta,8/9/2000,nayana@usc.edu,2138885555,USC,Computer Science,CA,90007,ai coding basketball
+6,Adam,Chandler,11/3/1999,adam@yahoo.com,6462229999,NYU,Film,NY,10003,film acting music
+7,Karan,Kapoor,2/15/2001,karan@gmail.com,3104447777,USC,Electrical Engineering,CA,90007,engineering robotics music
+8,Katy,Bruin,6/20/2000,katy@ucla.edu,4243331111,UCLA,Engineering,CA,90024,engineering hiking robotics
+9,Kurt,Cobain,2/20/1998,kurt@hotmail.com,2069998888,University of Washington,Music,WA,98195,music guitar songwriting
+10,Anne William,Berton,5/2/1999,abert@usc.edu,8765412345,USC,Computer Science,CA,90007,ai coding music
