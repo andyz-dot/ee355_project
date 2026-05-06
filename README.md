@@ -36,7 +36,7 @@ g++ -o test_network test_network.cpp network.cpp person.cpp date.cpp contact.cpp
 For the person equality test:
 
 ```
-g++ -o test_person_eq test_person_eq.cpp person.cpp date.cpp contact.cpp
+g++ -o test_person_eq test_person_eq.cpp person.cpp date.cpp contact.cpp misc.cpp
 ./test_person_eq
 ```
 
