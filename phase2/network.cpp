@@ -197,6 +197,7 @@ void Network::showMenu(){
         cout << "5. Print people with last name  \n";
         cout << "6. Connect \n"; // Phase 2 Part 1: new menu entry that pairs two people up as friends
         cout << "7. Wise Search \n"; // Phase 2 Part 6, search by any info (phone, email, birthday)
+        cout << "8. Print friends \n"; // Phase 2 Part 5: prints a person and their friends sorted by code
         cout << "\nSelect an option ... ";
         
         if (cin >> opt) {
@@ -371,6 +372,20 @@ void Network::showMenu(){
                 cout << "Person not found" << endl;
             } else {
                 found->print_person();
+            }
+        }
+        else if (opt == 8){
+            // Phase 2 Part 5: pick a person, then call print_friends to dump their sorted friend list
+            cout << "Print friends\n";
+            cout << "First Name: ";
+            getline(cin, fname);
+            cout << "Last Name: ";
+            getline(cin, lname);
+            Person* p = search(fname, lname);
+            if (p == NULL){
+                cout << "Person not found" << endl;
+            } else {
+                p->print_friends();
             }
         }
 
