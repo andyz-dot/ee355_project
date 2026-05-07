@@ -61,19 +61,48 @@ void Network::loadDB(string filename){
     tail = NULL;
     count = 0;
 
-    string fname, lname, bdate, emailStr, phoneStr, separator;
+    // Phase 2 Part 3: friends are saved as codeName lines after the phone line.
+    // Two-pass load: pass 1 creates the Persons and stashes the friend codes
+    // for each one in a parallel vector; pass 2 resolves codes -> Person* once
+    // every Person exists.
+    vector<Person*> created;
+    vector< vector<string> > friendCodes;
+
+    string fname, lname, bdate, emailStr, phoneStr, line;
     while (getline(infile, fname)) {
         if (fname.empty() || fname[0] == '-') continue;
         if (!getline(infile, lname)) break;
         if (!getline(infile, bdate)) break;
         if (!getline(infile, emailStr)) break;
         if (!getline(infile, phoneStr)) break;
-        getline(infile, separator);
+
+        // any non-dash, non-empty lines after phone are friend codes for this person
+        vector<string> codes;
+        while (getline(infile, line)){
+            if (line.empty()) continue;
+            if (line[0] == '-') break;
+            codes.push_back(line);
+        }
 
         Person* p = new Person(fname, lname, bdate, emailStr, phoneStr);
         push_back(p);
+        created.push_back(p);
+        friendCodes.push_back(codes);
     }
     infile.close();
+
+    // pass 2: wire up friendships
+    for (int i = 0; i < (int)created.size(); i++){
+        for (int j = 0; j < (int)friendCodes[i].size(); j++){
+            string targetCode = friendCodes[i][j];
+            for (int k = 0; k < (int)created.size(); k++){
+                if (codeName(created[k]->f_name, created[k]->l_name) == targetCode){
+                    created[i]->makeFriend(created[k]);
+                    break;
+                }
+            }
+        }
+    }
 }
 
 void Network::saveDB(string filename){
@@ -110,6 +139,13 @@ void Network::saveDB(string filename){
 
         string phoneFull = ptr->phone->get_contact("full");
         outfile << phoneFull.substr(6) << endl;
+
+        // Phase 2 Part 3: persist friend codes so the network's connections
+        // survive a save -> load cycle.
+        for (int i = 0; i < (int)ptr->myfriends.size(); i++){
+            Person* f = ptr->myfriends[i];
+            outfile << codeName(f->f_name, f->l_name) << endl;
+        }
 
         outfile << "--------------------" << endl;
         ptr = ptr->next;
